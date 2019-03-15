@@ -1,27 +1,27 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: catalog
+  name: grafana
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: catalog
+        app: grafana
     spec:
       containers:
-      - name: catalog-container
-        image: engdopaksacr.azurecr.io/catalog:img_id
+      - name: grafana-container
+        image: grafana/grafana
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: catalog
+  name: grafana
 spec:
   type: LoadBalancer
   ports:
-  - port: 8080
+  - port: 3000
   selector:
-    app: catalog
+    app: grafana
