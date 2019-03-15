@@ -1,6 +1,9 @@
-stage('Deploy Application to AKS') 
+ pipeline{
+ agent any
+ stages{
+ stage('Deploy Application to AKS') 
 	           {
-	              agent any    
+	             agent any    
 	             steps
 	                  {
 	                    withCredentials([azureServicePrincipal('azurelogin')])
@@ -14,3 +17,5 @@ stage('Deploy Application to AKS')
 	                        }
 	                  }             
 	            }
+	}}
+			
