@@ -1,0 +1,13 @@
+{
+        "release": {
+                "id": "Unique ID for Release, naming convention TBD, say ReleaseCandidate1-MMYYYY",
+                "description": "A human readable description, say Cornerstone Go-Live 1 Release Candidate 1",
+                                                                "environment":"environment_name",
+                "artifacts": {
+                        "microservices": [ {"name":"prometheus", "tag":"<tag_name>"},
+                                           {"name":"grafana", "tag":"<tag_name>"}
+                                                                                                                                
+                        ]
+                }
+        }
+}
