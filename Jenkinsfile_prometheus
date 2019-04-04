@@ -8,7 +8,7 @@
 	                  {
 	                    withCredentials([azureServicePrincipal('azurelogin')])
 	                       {
-	                         sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+	                         #sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
 	                         sh 'az aks get-credentials --resource-group AKS --name AKS'
 				 sh 'docker login --username="pooja1989" --password="pooja@7733"'
 	                         sh 'kubectl apply -f prometheus_deploy.yml'
