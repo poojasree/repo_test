@@ -6,15 +6,14 @@
 	             agent any    
 	             steps
 	                  {
-	                    withCredentials([azureServicePrincipal('azurelogin')])
-	                       {
+	                   
 	                         sh 'az aks get-credentials --resource-group AKS --name AKS'
 				 sh 'docker login --username="pooja1989" --password="pooja@7733"'
 	                         sh 'kubectl apply -f prometheus_deploy.yml'
 	                         echo 'Waiting for external IP to be genarated'
 	                         sleep 120 // seconds
 	                         sh 'kubectl get svc'
-	                        }
+	                        
 	                  }             
 	            }
 	}}
