@@ -6,12 +6,19 @@
 	             agent any    
 	             steps
 	                  {
-	                         sh 'kubectl create -f prometheus_deploy.yml'
-	                         echo 'Waiting for external IP to be genarated'
-	                         sleep 120 // seconds
-	                         sh 'kubectl get svc'
+	                     withCredentials([azureServicePrincipal('AzureServicePriciple')]) {
+                            
+				            //sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+	                         //sh 'az aks get-credentials --resource-group RG_MSDP1 --name MSDPaks1'
+	                         sh 'az aks get-credentials --resource-group AKS --name AKS'
+				            sh 'kubectl apply -f prometheus_deploy.yml'
+				            sh 'kubectl get svc'
+
+	                         
+	                     } 
+	                         
+	                         
 	                        
 	                  }             
 	            }
 	}}
-			
