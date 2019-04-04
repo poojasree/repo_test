@@ -1,0 +1,17 @@
+pipeline{
+ agent any
+ stages{
+ stage('Deploy Application to AKS') 
+	           {
+	             agent any    
+	             steps
+	                  {
+	                   
+	                         sh 'kubectl apply -f grafana_deploy.yaml'
+	                         echo 'Waiting for external IP to be genarated'
+	                         sleep 120 // seconds
+	                         sh 'kubectl get svc'
+	                        
+	                  }             
+	            }
+	}}
