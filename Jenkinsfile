@@ -6,7 +6,7 @@ pipeline{
 	             agent any    
 	             steps
 	                  {
-	                    sh 'python ./MultiComponentDeployment.py'
+	                    sh 'python ./MultiComponentDeployment.yml'
 	                  }             
 	            }
 	}}
