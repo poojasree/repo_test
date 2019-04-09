@@ -12,6 +12,8 @@
 	                         sh 'az aks get-credentials --resource-group RG_MSDP1 --name MSDPaks1'
 				 sh 'docker login --username="pooja1989" --password="pooja@7733"'
 	                         sh 'kubectl apply -f grafana_deploy.yaml'
+				 sh 'kubectl delete svc prometheus grafana'
+ 				 sh 'kubectl delete deployments prometheus grafana'
 	                         echo 'Waiting for external IP to be genarated'
 	                         sleep 120 // seconds
 	                         sh 'kubectl get svc'
