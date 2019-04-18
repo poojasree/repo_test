@@ -6,7 +6,7 @@ pipeline{
 			   agent { docker {image 'python:latest'}}   
 	             steps
 	                  {
-	                    sh 'python ./MultiComponentDeployment.yml'
+	                    sh 'python ./MultiComponentDeployment.py'
 	                  }             
 	            }
 	}}
