@@ -5,7 +5,7 @@
                                                                 "environment":"environment_name",
                 "artifacts": {
                         "microservices": [ {"name":"prometheus", "tag":"<tag_name>"},
-                                           {"name":"grafana", "tag":"<tag_name>"}
+                                           {"name":"flyway_demo", "tag":"<tag_name>"}
                                                                                                                                 
                         ]
                 }
