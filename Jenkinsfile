@@ -3,7 +3,7 @@ pipeline{
  stages{
  stage('Deploy Application to AKS') 
 	           {
-			   agent { docker {image 'python:latest'}}   
+			    agent any
 	             steps
 	                  {
 	                    sh 'python ./MultiComponentDeployment.py'
