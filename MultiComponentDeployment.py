@@ -5,7 +5,7 @@ import time
 def deployMultiRelease():
         with open("release.json", "r") as f:
                 manifestobj = json.load(f)
-        for microservice_details in manifestobj["release"]["artifacts"]["microservices"]:
+        for microservice_details in manifestobj["release"]["artifacts"]["components"]:
                         print(microservice_details["name"])
                         deploy(microservice_details["name"])
 
